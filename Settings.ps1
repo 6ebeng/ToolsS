@@ -4,7 +4,6 @@
 if( $Env:USER1_AUTH_TOKEN -eq $env:UserName) {
 
         new-item $env:USERPROFILE\Documents\OpenRPA -itemtype directory
-        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/T36k0/RDP/master/FILES/s1" -OutFile "$env:USERPROFILE\Documents\OpenRPA\settings.json"
         while (!(Test-Path "C:\Program Files\OpenRPA\OpenRPA.exe")) { Start-Sleep 5 }
         Set-CurrentUser -Save -Username $Env:USER1_AUTH_TOKEN -Password $Env:USER1_AUTH_TOKEN -WSURL ws://robot.shebeng.co
         Start-Process "OpenRPA.exe"
@@ -25,7 +24,6 @@ if( $Env:USER1_AUTH_TOKEN -eq $env:UserName) {
 if( $Env:USER2_AUTH_TOKEN -eq $env:UserName) {
 
         new-item $env:USERPROFILE\Documents\OpenRPA -itemtype directory
-        Invoke-WebRequest -Uri "https://raw.githubusercontent.com/T36k0/RDP/master/FILES/s2" -OutFile "$env:USERPROFILE\Documents\OpenRPA\settings.json"
         while (!(Test-Path "C:\Program Files\OpenRPA\OpenRPA.exe")) { Start-Sleep 5 }
         Set-CurrentUser -Save -Username $Env:USER2_AUTH_TOKEN -Password $Env:USER2_AUTH_TOKEN -WSURL ws://robot.shebeng.co
         Start-Process "OpenRPA.exe"
