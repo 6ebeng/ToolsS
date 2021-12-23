@@ -7,16 +7,7 @@ if( $Env:USER1_AUTH_TOKEN -eq $env:UserName) {
         while (!(Test-Path "C:\Program Files\OpenRPA\OpenRPA.exe")) { Start-Sleep 5 }
         Set-CurrentUser -Save -Username $Env:USER1_AUTH_TOKEN -Password $Env:USER1_AUTH_TOKEN -WSURL ws://robot.shebeng.co
         Start-Process "OpenRPA.exe"
-        Start-Process "chrome.exe"
-        reg add "HKEY_CURRENT_USER\Software\Microsoft\Terminal Server Client" /v "AuthenticationLevelOverride" /t "REG_DWORD" /d 0 /f
-        
-        Start-Sleep 40
-        
-        $Server="127.0.0.2"
-        $User="$env:computername\runneradmin2"
-        $Password="1"
-        cmdkey /generic:TERMSRV/$Server /user:$User /pass:$Password
-        mstsc /v:$Server /w:1200 /h:800
+        Start-Process "chrome.exe"       
         
 }
 
